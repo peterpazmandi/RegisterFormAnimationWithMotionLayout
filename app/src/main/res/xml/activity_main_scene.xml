@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/startTransition"
+        app:constraintSetStart="@id/startState"/>
+
+    <Transition
+        android:id="@+id/nameSelectedTransition"
+        app:constraintSetEnd="@+id/nameSelected"
+        app:duration="1000">
+<!--        <OnClick-->
+<!--            app:targetId="@id/et_name"/>-->
+        <KeyFrameSet >
+            <KeyAttribute
+                app:motionTarget="@+id/et_name"
+                app:framePosition="40"
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/white"  />
+        </KeyFrameSet>
+    </Transition>
+    <Transition
+        android:id="@+id/emailSelectedTransition"
+        app:constraintSetEnd="@+id/emailSelected"
+        app:duration="1000">
+<!--        <OnClick-->
+<!--            app:targetId="@id/et_email"/>-->
+        <KeyFrameSet >
+            <KeyAttribute
+                app:motionTarget="@+id/et_email"
+                app:framePosition="40"
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/white"  />
+        </KeyFrameSet>
+    </Transition>
+    <Transition
+        android:id="@+id/passwordSelectedTransition"
+        app:constraintSetEnd="@+id/passwordSelected"
+        app:duration="1000">
+<!--        <OnClick-->
+<!--            app:targetId="@id/et_password"/>-->
+        <KeyFrameSet >
+            <KeyAttribute
+                app:motionTarget="@+id/et_password"
+                app:framePosition="40"
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/white"  />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/startState">
+        <Constraint
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/gray_1"
+            android:drawableStart="@drawable/ic_person_24"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" >
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/gray_1"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/gray_1"
+            android:drawableStart="@drawable/ic_email_24"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/et_name" />
+        <Constraint
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/gray_1"
+            android:drawableStart="@drawable/ic_lock_24"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/et_email" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/nameSelected">
+        <Constraint
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_person_24"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" >
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/white"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/gray_1"
+            android:drawableStart="@drawable/ic_email_24"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/et_name" >
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/gray_1"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/gray_1"
+            android:drawableStart="@drawable/ic_lock_24"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/et_email"  >
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/gray_1"/>
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/emailSelected">
+        <Constraint
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_person_24"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"  >
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/gray_1"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_email_24"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/et_name" >
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/white"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/gray_1"
+            android:drawableStart="@drawable/ic_lock_24"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/et_email" >
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/gray_1"/>
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/passwordSelected">
+        <Constraint
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_person_24"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"  >
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/gray_1"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_email_24"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/et_name" >
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/gray_1"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/gray_1"
+            android:drawableStart="@drawable/ic_lock_24"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/et_email" >
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/white"/>
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>
